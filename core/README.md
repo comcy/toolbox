@@ -1,23 +1,12 @@
-# Toolbox
+# Toolbox Core
 
-Build batches
+## Installation
 
-This projects represents the toolbox.
-
-**Content**
-
-
----
-
-## Backend
-
-### Installation
-
-#### Python 3
+### Python 3
 
 Go to [python.org](https://www.python.org/) and install Python 3 for your OS.
 
-#### Pipenv
+### Pipenv
 Pipenv is the officially recommended Python packaging tool for
 Python, free (as in freedom).
 
@@ -41,40 +30,26 @@ Otherwise, just use pip:
     pip install pipenv
     
     
-### Install the needed packages
+## Install the needed packages
 
 To install the needed packages just go to ``toolbox/core`` and  use ``pipenv``:
 
     pipenv install
 
-#### Other packages
+### Other packages
 
 At the moment no other packages are needed.
     
-### Setting all up
+## Setting all up
 
-#### Configuration
+### Configuration
 
 You can config everything inside the ``config.ini`` file. Set the api url and the auth token.
 
-#### Start the app
+### Start the app
 
 On Windows:
 
     cd toolbox/core
     pipenv shell
     python server.py
-
-
-## Frontend
-
-The frontend is based on angular (v11.x) and is integrated within an electon application.
-
-Both applications can be started sperately. 
-
-This helps maintaining the development of the angular applicatiom standalone. And integrate it within the electron application afterwards.
-
-## Build
-
-## Run
-
