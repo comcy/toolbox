@@ -7,6 +7,19 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+/*************** RELOAD SECTION ********* */
+// const dir = __dirname;
+// const watchDir = `${__dirname}/../../src`;
+// const execDir = `${__dirname}/../..`;
+
+// // Enable live reload for Electron too
+// require('electron-reload')(`${watchDir}`, {
+//     electron: require(`${__dirname}/node_modules/electron`)
+// });
+/**************************************** */
+
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -32,7 +45,20 @@ function createWindow() {
     // when you should delete the corresponding element.
     mainWindow = null
   })
-}
+
+
+  const filter = {
+    urls: ['https://localhost/callback*'],
+  };
+
+  const {
+    session: { webRequest },
+  } = mainWindow.webContents;
+
+  webRequest.onBeforeRequest(filter, ({ url }) => {
+    mainWindow.webContents.send('authEvent', url);
+  });
+};
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

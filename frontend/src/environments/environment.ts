@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  env: '',
+  authConfig: {
+      issuer: 'https://cq.mpm-stage.prod.connected-quality.com/auth/realms/default',
+      clientId: 'cq-mpm',
+      responseType: 'code',
+      redirectUri: 'http://localhost:4200/index.html',
+      requireHttps: false,
+      showDebugInformation: true,
+  },
+  auditTrailApiUrl: 'https://cq.mpm-stage.prod.connected-quality.com/cq-audittrail-api',
+  mpmApiUrl: 'https://cq.mpm-stage.prod.connected-quality.com/cq-mpm-api/api/v1',
+  // mpmApiUrl: 'https://localhost:5001/api/v1'
 };
 
 /*
