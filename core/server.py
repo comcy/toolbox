@@ -24,7 +24,7 @@ class StorageService(storage_pb2_grpc.StorageServicer):
 
 
 def get_storages(uuid):
-    api_storage_url = API_URL + 'storages/%s' % uuid
+    api_storage_url = API_URL + f'storages/{uuid}'
     r = requests.get(api_storage_url, headers=HEADERS)
     return r.json()
 
@@ -34,7 +34,7 @@ async def serve():
     storage_pb2_grpc.add_StorageServicer_to_server(StorageService(), server)
     listen_addr = '[::]:50051'
     server.add_insecure_port(listen_addr)
-    logging.info("Starting server on %s", listen_addr)
+    logging.info(f'Starting server on {listen_addr}')
     await server.start()
     await server.wait_for_termination()
 
@@ -45,7 +45,7 @@ def main():
     if r.status_code == 200:
         print(json.dumps(r.json(), indent=2))
     else:
-        print('Something went wrong: ' + r.text)
+        print(f'Something went wrong: {r.text}')
 
 
 if __name__ == "__main__":
