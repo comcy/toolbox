@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "src/assets/styles/colors";
+
+body {
+  background: $siteBackground;
+  margin: 0px;
+  height: 100%;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.h0, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+
+}
+
+.h0, h1, h2, h3 {
+  font-weight: 300;
+}
+
+.h0 {
+  font-size: 3rem;
+}

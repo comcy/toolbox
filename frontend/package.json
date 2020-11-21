@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-electron": "ng build --base-href . && cp src/electron/* dist/",
-    "electron": "npm run build-electron && ./node_modules/.bin/electron dist/"
+    "electron:build": "ng build --base-href . && cp src/electron/* dist/",
+    "electron:exec": "./node_modules/.bin/electron dist/",
+    "electron:start": "npm run electron:build && npm run electron:exec"
   },
   "private": true,
   "dependencies": {
