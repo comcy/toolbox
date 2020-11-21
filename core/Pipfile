@@ -6,8 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-zerorpc = "*"
 requests = "*"
+grpcio = "*"
+grpcio-tools = "*"
 
 [requires]
 python_version = "3.9"
