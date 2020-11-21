@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Storage {
+  rpc GetStorage (StorageRequest) returns (StorageResponse) {}
+}
+
+message StorageRequest {
+  string uuid = 1;
+}
+
+message StorageResponse {
+  string name = 1;
+}
